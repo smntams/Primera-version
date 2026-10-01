@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>🐢 Tortuguita Azul — Guardianes del Océano</title>
+</head>
+
+<body>
+
+<!-- BURBUJAS -->
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+<div class="bubble b5"></div>
+<div class="bubble b6"></div>
+
+<header>
+  <h1>🐢 Tortuguita Azul</h1>
+  <p>
+    Mi mascota del océano · Aprende, juega y conviértete
+    en un Guardián del Mar 🌊
+  </p>
+</header>
+
+<main class="app">
+
+  <!-- ESTADISTICAS -->
+  <section class="stats">
+
+    <div class="stat">
+      <div class="stat-title">
+        <span>🍎 Hambre</span>
+        <span id="hungerText">70%</span>
+      </div>
+      <div class="bar">
+        <div id="hungerBar" class="fill hunger"></div>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">
+        <span>⚡ Energía</span>
+        <span id="energyText">70%</span>
+      </div>
+      <div class="bar">
+        <div id="energyBar" class="fill energy"></div>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">
+        <span>💖 Felicidad</span>
+        <span id="happyText">70%</span>
+      </div>
+      <div class="bar">
+        <div id="happyBar" class="fill happiness"></div>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">
+        <span>💧 Océano</span>
+        <span id="cleanText">70%</span>
+      </div>
+      <div class="bar">
+        <div id="cleanBar" class="fill clean"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- OCEANO -->
+  <section class="ocean" id="ocean">
+
+    <div class="sun"></div>
+
+    <div class="turtle swim" id="turtle" onclick="tocarTortuga()">
+
+      <div class="tail"></div>
+
+      <div class="flipper f1"></div>
+      <div class="flipper f2"></div>
+      <div class="flipper f3"></div>
+
+      <div class="shell"></div>
+
+      <div class="head">
+        <div class="eye"></div>
+        <div class="mouth"></div>
+      </div>
+
+    </div>
+
+    <div class="turtle-message" id="message">
+      <strong>🐢 Tortuguita:</strong>
+      ¡Hola! Soy Azul. ¿Quieres ayudarme a cuidar nuestro océano?
+    </div>
+
+    <div class="fish fish1 clickable-marine" onclick="mostrarVentana('🐠','¡Encontraste un pez!','Los peces son una parte fundamental de las redes alimentarias marinas.','💙 ¡Sigue explorando!')">🐠</div>
+    <div class="fish fish2 clickable-marine" onclick="mostrarVentana('🐟','¡Encontraste un pez!','La biodiversidad marina ayuda a mantener el equilibrio de los ecosistemas.','💙 ¡Sigue explorando!')">🐟</div>
+    <div class="fish fish3 clickable-marine" onclick="mostrarVentana('🐡','¡Encontraste un pez!','Cada especie cumple una función dentro del ecosistema marino.','💙 ¡Sigue explorando!')">🐡</div>
+
+    <div class="coral coral1" aria-label="Coral">
+      <span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span>
+      <span class="tip t1"></span><span class="tip t2"></span><span class="tip t3"></span>
+    </div>
+    <div class="coral coral2" aria-label="Coral">
+      <span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span>
+      <span class="tip t1"></span><span class="tip t2"></span><span class="tip t3"></span>
+    </div>
+    <div class="coral coral3" aria-label="Coral">
+      <span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span>
+      <span class="tip t1"></span><span class="tip t2"></span><span class="tip t3"></span>
+    </div>
+
+    <div class="jellyfish jelly1" aria-label="Medusa">
+      <span class="cap"></span><span class="tentacle t1"></span><span class="tentacle t2"></span><span class="tentacle t3"></span>
+    </div>
+    <div class="jellyfish jelly2" aria-label="Medusa">
+      <span class="cap"></span><span class="tentacle t1"></span><span class="tentacle t2"></span><span class="tentacle t3"></span>
+    </div>
+
+    <!-- BASURA -->
+    <div class="trash trash1" onclick="recogerBasura(this)">🧴</div>
+    <div class="trash trash2" onclick="recogerBasura(this)">🥤</div>
+    <div class="trash trash3" onclick="recogerBasura(this)">🛍️</div>
+    <div class="trash trash4" onclick="recogerBasura(this)">🗑️</div>
+
+  </section>
+
+  <!-- BOTONES -->
+  <section class="controls">
+
+    <button class="primary" onclick="abrirComida()">
+      🍎 Alimentar
+    </button>
+
+    <button onclick="jugar()">
+      🏊 Jugar
+    </button>
+
+    <button onclick="limpiar()">
+      🧹 Limpiar
+    </button>
+
+    <button onclick="datoAleatorio()">
+      📚 Aprender
+    </button>
+
+    <button onclick="celebrar()">
+      💙 Abrazar
+    </button>
+
+  </section>
+
+  <section class="grid">
+
+    <!-- DATOS -->
+    <article class="card">
+
+      <h2>🌎 Aprende con Azul</h2>
+
+      <div class="fact" id="fact">
+        <div class="fact-number">ODS 14</div>
+        Conservar y utilizar sosteniblemente los océanos,
+        los mares y los recursos marinos.
+      </div>
+
+      <br>
+
+      <button class="primary" onclick="datoAleatorio()">
+        ✨ Dame otro dato
+      </button>
+
+    </article>
+
+    <!-- DECORACION -->
+    <article class="card">
+
+      <h2>🎨 Diseña su océano</h2>
+
+      <p>
+        Cada elemento que agregues representa un ecosistema
+        marino más diverso.
+      </p>
+
+<div class="decorations">
+
+  <button onclick="agregarElemento('🐚')">
+    🐚 Concha
+  </button>
+
+  <button onclick="agregarElemento('🐠')">
+    🐠 Pez
+  </button>
+
+  <button onclick="agregarElemento('🐙')">
+    🐙 Pulpo
+  </button>
+
+  <button onclick="agregarElemento('⭐')">
+    ⭐ Estrella de mar
+  </button>
+
+  <button onclick="agregarElemento('🦀')">
+    🦀 Cangrejo
+  </button>
+
+  <button onclick="agregarElemento('🌿')">
+    🌿 Alga
+  </button>
+
+</div>
+
+        
+
+      <p id="decorationMessage">
+        ¡Crea un océano lleno de vida!
+      </p>
+
+    </article>
+
+    <!-- PROGRESO -->
+    <article class="card">
+
+      <h2>🏆 Mis logros</h2>
+
+      <div class="badges" id="badges">
+
+        <div class="badge">
+          🐣 Primer cuidado
+        </div>
+
+        <div class="badge">
+          🌊 Guardián del agua
+        </div>
+
+      </div>
+
+      <p>
+        Acciones positivas:
+        <strong id="actions">0</strong>
+      </p>
+
+    </article>
+
+    <!-- OBJETIVO -->
+    <article class="card">
+
+      <h2>🎯 Nuestra misión</h2>
+
+      <p>
+        Ayuda a Azul a mantener su hogar saludable.
+        Cada acción positiva mejora el océano.
+      </p>
+
+      <ul>
+        <li>💧 Mantener limpio el mar.</li>
+        <li>🐠 Proteger la biodiversidad.</li>
+        <li>🪸 Cuidar los ecosistemas.</li>
+        <li>♻️ Reducir los residuos.</li>
+        <li>🌎 Utilizar responsablemente los recursos marinos.</li>
+      </ul>
+
+    </article>
+
+  </section>
+
+</main>
+
+<!-- MODAL COMIDA -->
+
+<div class="modal" id="foodModal">
+
+  <div class="modal-box">
+
+    <h2>🍎 ¿Qué quieres darle a Azul?</h2>
+
+    <p>
+      Elige un alimento apropiado para una tortuga marina.
+    </p>
+
+    <span class="food" onclick="darComida('🥬')">🥬</span>
+    <span class="food" onclick="darComida('🦐')">🦐</span>
+    <span class="food" onclick="darComida('🪼')">🪼</span>
+
+    <br><br>
+
+    <button onclick="cerrarComida()">
+      Cerrar
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- VENTANA CENTRAL -->
+<div class="game-modal" id="gameModal">
+  <div class="game-modal-box">
+    <div class="game-modal-icon" id="gameModalIcon">🌊</div>
+    <h2 id="gameModalTitle">¡Muy bien!</h2>
+    <div class="reward" id="gameModalReward">+1 acción positiva</div>
+    <p id="gameModalText">Tu acción ayudó al océano.</p>
+    <button class="continue" onclick="cerrarGameModal()">✨ Continuar jugando</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

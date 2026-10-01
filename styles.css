@@ -1,0 +1,629 @@
+:root{
+  --azul:#0794c7;
+  --azul2:#5de0f2;
+  --profundo:#063b67;
+  --turquesa:#19d3b5;
+  --coral:#ff7b72;
+  --amarillo:#ffd95a;
+  --blanco:#ffffff;
+  --texto:#123b55;
+  --verde:#55c878;
+  --rojo:#ef6262;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color:var(--texto);
+  background:
+    radial-gradient(circle at 10% 10%,#ffffff 0 5%,transparent 6%),
+    linear-gradient(#dffbff,#b4eff5);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* BURBUJAS */
+
+.bubble{
+  position:fixed;
+  bottom:-80px;
+  border-radius:50%;
+  background:rgba(255,255,255,.45);
+  animation:subir linear infinite;
+  pointer-events:none;
+}
+
+.b1{left:5%;width:22px;height:22px;animation-duration:10s}
+.b2{left:18%;width:12px;height:12px;animation-duration:7s}
+.b3{left:32%;width:30px;height:30px;animation-duration:12s}
+.b4{left:55%;width:16px;height:16px;animation-duration:8s}
+.b5{left:72%;width:28px;height:28px;animation-duration:11s}
+.b6{left:90%;width:14px;height:14px;animation-duration:9s}
+
+@keyframes subir{
+  to{
+    transform:translateY(-115vh);
+    opacity:0;
+  }
+}
+
+/* CABECERA */
+
+header{
+  padding:25px 20px;
+  text-align:center;
+  color:white;
+  background:linear-gradient(135deg,#087db1,#09bcae);
+  box-shadow:0 5px 20px rgba(0,70,100,.2);
+}
+
+header h1{
+  margin:0;
+  font-size:clamp(2rem,5vw,3.5rem);
+  text-shadow:3px 3px #06658b;
+}
+
+header p{
+  margin:8px auto 0;
+  max-width:700px;
+  font-size:1.05rem;
+}
+
+/* CONTENEDOR */
+
+.app{
+  width:min(1200px,94%);
+  margin:25px auto;
+}
+
+/* ESTADISTICAS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.stat{
+  background:white;
+  border-radius:18px;
+  padding:13px;
+  box-shadow:0 6px 15px rgba(0,80,120,.12);
+}
+
+.stat-title{
+  display:flex;
+  justify-content:space-between;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.bar{
+  height:12px;
+  border-radius:20px;
+  background:#dbeef2;
+  overflow:hidden;
+}
+
+.fill{
+  height:100%;
+  width:70%;
+  border-radius:20px;
+  transition:.5s;
+}
+
+.hunger{background:#ffb347}
+.energy{background:#8d7cff}
+.happiness{background:#ff72aa}
+.clean{background:#22cdb4}
+
+/* OCEANO */
+
+.ocean{
+  position:relative;
+  min-height:520px;
+  border-radius:30px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 25% 25%,rgba(255,255,255,.25) 0 5px,transparent 6px),
+    linear-gradient(#48dff1 0%,#159fce 45%,#07568b 100%);
+  box-shadow:
+    inset 0 0 60px rgba(0,30,90,.25),
+    0 10px 25px rgba(0,70,100,.2);
+}
+
+/* SOL */
+
+.sun{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#ffe77b;
+  top:30px;
+  right:40px;
+  box-shadow:0 0 40px #fff2a8;
+}
+
+/* TORTUGA */
+
+.turtle{
+  position:absolute;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  width:240px;
+  height:180px;
+  transition:.5s;
+  cursor:pointer;
+  z-index:10;
+}
+
+.turtle:hover{
+  transform:translate(-50%,-50%) scale(1.05) rotate(-2deg);
+}
+
+.shell{
+  position:absolute;
+  width:150px;
+  height:120px;
+  left:45px;
+  top:30px;
+  border-radius:52% 48% 48% 52%;
+  background:
+    radial-gradient(circle at 35% 35%,#89e76e 0 13%,transparent 14%),
+    radial-gradient(circle at 65% 35%,#68ca5b 0 13%,transparent 14%),
+    radial-gradient(circle at 50% 70%,#54b94f 0 15%,transparent 16%),
+    #35a94f;
+  border:8px solid #237e45;
+  box-shadow:inset 0 -10px 0 rgba(0,0,0,.12),0 12px 10px rgba(0,0,0,.15);
+}
+
+.head{
+  position:absolute;
+  right:0;
+  top:55px;
+  width:70px;
+  height:60px;
+  border-radius:55% 45% 50% 50%;
+  background:#65d46b;
+  border:5px solid #25884c;
+}
+
+.eye{
+  position:absolute;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#173b2e;
+  top:17px;
+  right:18px;
+}
+
+.mouth{
+  position:absolute;
+  width:22px;
+  height:10px;
+  border-bottom:3px solid #235c3b;
+  border-radius:50%;
+  right:12px;
+  top:34px;
+}
+
+.flipper{
+  position:absolute;
+  width:75px;
+  height:35px;
+  background:#5bd367;
+  border:5px solid #278c4d;
+  border-radius:60%;
+}
+
+.f1{left:0;top:35px;transform:rotate(-25deg)}
+.f2{left:15px;bottom:5px;transform:rotate(20deg)}
+.f3{right:40px;bottom:0;transform:rotate(-20deg)}
+
+.tail{
+  position:absolute;
+  left:20px;
+  top:78px;
+  width:40px;
+  height:30px;
+  background:#56c95f;
+  clip-path:polygon(100% 50%,0 0,0 100%);
+}
+
+/* ANIMACION */
+
+.swim{
+  animation:nadar 2.5s ease-in-out infinite;
+}
+
+@keyframes nadar{
+  0%,100%{transform:translate(-50%,-50%) rotate(-2deg)}
+  50%{transform:translate(-50%,-56%) rotate(2deg)}
+}
+
+/* ELEMENTOS MARINOS */
+
+.fish{
+  position:absolute;
+  font-size:42px;
+  animation:nadarPez 8s linear infinite;
+}
+
+.fish1{top:25%;left:-60px}
+.fish2{top:35%;left:-120px;animation-delay:2s}
+.fish3{top:15%;left:-200px;animation-delay:4s}
+
+@keyframes nadarPez{
+  from{transform:translateX(-100px)}
+  to{transform:translateX(130vw)}
+}
+
+.coral{
+  position:absolute;
+  bottom:0;
+  width:95px;
+  height:145px;
+  z-index:5;
+  filter:drop-shadow(0 8px 5px rgba(0,35,65,.18));
+  transform-origin:bottom center;
+  animation:coralBalance 3s ease-in-out infinite;
+}
+.coral .branch{
+  position:absolute;
+  bottom:0;
+  width:18px;
+  border-radius:20px 20px 4px 4px;
+  background:linear-gradient(90deg,#ff6f91,#ff9b72);
+  box-shadow:inset 5px 0 rgba(255,255,255,.18);
+}
+.coral .branch:before,.coral .branch:after{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:55px;
+  border-radius:20px;
+  background:inherit;
+}
+.coral .branch:before{left:-18px;bottom:35px;transform:rotate(-32deg)}
+.coral .branch:after{right:-18px;bottom:52px;transform:rotate(32deg)}
+.coral .b1{left:38px;height:125px}
+.coral .b2{left:18px;height:92px;transform:rotate(-12deg)}
+.coral .b3{right:18px;height:105px;transform:rotate(12deg)}
+.coral .tip{
+  position:absolute;
+  width:22px;height:22px;border-radius:50%;
+  background:#ffb08d;
+}
+.coral .t1{left:27px;top:16px}.coral .t2{left:10px;top:43px}.coral .t3{right:7px;top:34px}
+
+@keyframes coralBalance{
+  0%,100%{transform:rotate(-1deg)}
+  50%{transform:rotate(2deg)}
+}
+
+.jellyfish{
+  position:absolute;
+  width:78px;height:92px;
+  z-index:4;
+  animation:medusaFloat 4s ease-in-out infinite;
+}
+.jellyfish .cap{
+  position:absolute;
+  left:8px;top:0;
+  width:62px;height:45px;
+  border-radius:50% 50% 42% 42%;
+  background:linear-gradient(135deg,#e8a7ff,#a77bff);
+  border:3px solid rgba(255,255,255,.55);
+  box-shadow:0 0 20px rgba(214,158,255,.65);
+}
+.jellyfish .cap:after{
+  content:"";
+  position:absolute;
+  left:10px;top:7px;width:25px;height:12px;
+  border-radius:50%;
+  background:rgba(255,255,255,.35);
+  transform:rotate(-15deg);
+}
+.jellyfish .tentacle{
+  position:absolute;top:38px;width:9px;height:48px;
+  border-radius:0 0 15px 15px;
+  border-left:3px solid #d9b8ff;
+  border-bottom:3px solid #d9b8ff;
+}
+.jellyfish .t1{left:17px}.jellyfish .t2{left:34px;height:57px}.jellyfish .t3{left:51px;height:43px}
+
+.jelly1{left:70%;top:20%;animation-delay:.5s}
+.jelly2{left:18%;top:43%;transform:scale(.78);animation-delay:2s}
+
+@keyframes medusaFloat{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-18px) rotate(4deg)}
+}
+
+/* BASURA */
+
+.trash{
+  position:absolute;
+  font-size:45px;
+  cursor:pointer;
+  user-select:none;
+  transition:.3s;
+}
+
+.trash:hover{
+  transform:scale(1.2) rotate(10deg);
+}
+
+.trash1{left:12%;top:60%}
+.trash2{right:18%;top:65%}
+.trash3{left:42%;top:78%}
+.trash4{right:35%;top:25%}
+
+/* MENSAJE */
+
+.turtle-message{
+  position:absolute;
+  top:20px;
+  left:25px;
+  max-width:360px;
+  background:white;
+  border-radius:20px;
+  padding:15px 18px;
+  box-shadow:0 8px 20px rgba(0,50,80,.2);
+  z-index:20;
+}
+
+.turtle-message strong{
+  color:#087cae;
+}
+
+/* CONTROLES */
+
+.controls{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+  margin:20px 0;
+}
+
+button{
+  border:0;
+  border-radius:18px;
+  padding:15px 10px;
+  background:white;
+  color:var(--texto);
+  font-size:1rem;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 5px 12px rgba(0,70,100,.12);
+  transition:.2s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(0,70,100,.2);
+}
+
+button:active{
+  transform:scale(.96);
+}
+
+.primary{
+  background:linear-gradient(135deg,#10cdb1,#069bd1);
+  color:white;
+}
+
+/* TARJETAS */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:rgba(255,255,255,.95);
+  border-radius:25px;
+  padding:22px;
+  box-shadow:0 8px 20px rgba(0,70,100,.12);
+}
+
+.card h2{
+  margin-top:0;
+  color:#087cae;
+}
+
+.fact{
+  min-height:110px;
+  background:linear-gradient(135deg,#e9ffff,#d9f8ff);
+  border-left:6px solid var(--turquesa);
+  border-radius:15px;
+  padding:16px;
+  font-size:1.05rem;
+}
+
+.fact-number{
+  font-size:2rem;
+  font-weight:bold;
+  color:#087cae;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.badge{
+  background:#fff1a9;
+  padding:10px 14px;
+  border-radius:50px;
+  font-weight:bold;
+}
+
+/* DECORACION */
+
+.decorations{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.decorations button{
+  padding:10px 14px;
+  background:#e8fbff;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,40,70,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:100;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(550px,100%);
+  background:white;
+  border-radius:28px;
+  padding:25px;
+  text-align:center;
+  animation:aparecer .3s ease;
+}
+
+@keyframes aparecer{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.food{
+  font-size:65px;
+  cursor:pointer;
+  margin:15px;
+  transition:.2s;
+}
+
+.food:hover{
+  transform:scale(1.2);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .controls{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .ocean{
+    min-height:600px;
+  }
+
+  .turtle{
+    transform:translate(-50%,-50%) scale(.8);
+  }
+
+  .turtle:hover{
+    transform:translate(-50%,-50%) scale(.85);
+  }
+}
+
+@media(max-width:480px){
+  .coral{transform:scale(.72);transform-origin:bottom center}
+  .jellyfish{transform:scale(.72)}
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .controls{
+    grid-template-columns:1fr;
+  }
+
+  .turtle-message{
+    left:10px;
+    right:10px;
+    font-size:.9rem;
+  }
+}
+
+/* VENTANA CENTRAL DE ACCIONES */
+.game-modal{position:fixed;inset:0;background:rgba(3,35,60,.72);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:300}
+.game-modal.show{display:flex}
+.game-modal-box{width:min(520px,94vw);background:linear-gradient(145deg,#fff,#eafcff);border-radius:30px;padding:28px;text-align:center;box-shadow:0 20px 60px rgba(0,35,70,.35);border:4px solid rgba(255,255,255,.8);animation:modalPop .3s ease}
+.game-modal-icon{font-size:4rem;line-height:1;margin-bottom:8px;animation:iconBounce .8s ease}
+.game-modal-box h2{margin:8px 0;color:#087cae;font-size:clamp(1.5rem,4vw,2rem)}
+.game-modal-box p{font-size:1.05rem;line-height:1.55;margin:12px auto 20px;max-width:440px}
+.game-modal-box .reward{display:inline-block;margin:0 0 18px;padding:8px 14px;border-radius:30px;background:#fff1a9;font-weight:bold;color:#765900}
+.game-modal-box .continue{background:linear-gradient(135deg,#10cdb1,#069bd1);color:#fff;min-width:190px}
+.clickable-marine{cursor:pointer}
+@keyframes modalPop{from{transform:scale(.72) translateY(15px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+@keyframes iconBounce{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+/* GIRO AL JUGAR */
+@keyframes giroAzul{
+  0%{
+    transform:translate(-50%,-50%) rotate(0deg);
+  }
+
+  30%{
+    transform:translate(-50%,-50%) rotate(180deg) scale(1.05);
+  }
+
+  60%{
+    transform:translate(-50%,-50%) rotate(360deg) scale(1.08);
+  }
+
+  100%{
+    transform:translate(-50%,-50%) rotate(360deg) scale(1);
+  }
+}
+
+/* ACERCARSE AL ABRAZAR */
+@keyframes acercarAzul{
+  0%{
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+  45%{
+    transform:translate(-50%,-50%) scale(1.45);
+  }
+
+  70%{
+    transform:translate(-50%,-50%) scale(1.55);
+  }
+
+  100%{
+    transform:translate(-50%,-50%) scale(1);
+  }
+}
+
+.turtle.giro{
+  animation:giroAzul .9s ease !important;
+}
+
+.turtle.acercar{
+  animation:acercarAzul 1.2s ease !important;
+}
